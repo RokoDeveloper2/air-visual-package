@@ -1,0 +1,139 @@
+{
+    "package": "AirVisual",
+    "tagline": "AirVisual API",
+    "description": "The world\u2019s smartest air quality monitor helping you track, foresee, and take action against invisible threats in the air.The AirVisual Advantage - 8,000 stations worldwide Air pollution is a global problem - we offer a global solution.High accuracy forecasts In-house artificial intelligence delivers forecast precision never known possible, until now.Crowd-sourced platform No-nonsense news and educational ressources provided for the community, by the community.",
+    "image": "https:\/\/logo.clearbit.com\/airvisual.com",
+    "repo": "",
+    "keywords": [
+        "API",
+        "Weather",
+        "Forecasts",
+        "Monitoring",
+        "Air",
+        "Foresee"
+    ],
+    "accounts": {
+        "domain": "airvisual.com",
+        "credentials": [
+            "apiKey"
+        ]
+    },
+    "blocks": [
+        {
+            "name": "getNearestCity",
+            "description": "Pollution data for nearest city from GPS coordinates \/ IP address.In case coordinates are not specified, we will estimate these based on requester's IP address.",
+            "args": [
+                {
+                    "name": "apiKey",
+                    "type": "credentials",
+                    "info": "Your API key from airVisual account.",
+                    "required": true,
+                    "vendorSchema": {
+                        "name": "key"
+                    }
+                },
+                {
+                    "name": "coordinates",
+                    "type": "Map",
+                    "info": "Latitude and longitude of the place.",
+                    "required": false,
+                    "vendorSchema": {
+                        "format": "toLongLat:{lat,lon}"
+                    }
+                },
+                {
+                    "name": "radius",
+                    "type": "Number",
+                    "info": "Maximum radius distance in kilometers for search. Default is 1,000Km",
+                    "required": false,
+                    "vendorSchema": {
+                        "name": "rad"
+                    }
+                }
+            ],
+            "vendorRequest": {
+                "url": "http:\/\/api.airvisual.com\/v2\/nearest_city",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "key",
+                            "lat",
+                            "lon",
+                            "rad"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getCity",
+            "description": "Pollution data for a specified city.",
+            "args": [
+                {
+                    "name": "apiKey",
+                    "type": "credentials",
+                    "info": "Your API key from airVisual account.",
+                    "required": true,
+                    "vendorSchema": {
+                        "name": "key"
+                    }
+                },
+                {
+                    "name": "country",
+                    "type": "String",
+                    "info": "Country name where the city is located.",
+                    "required": true
+                },
+                {
+                    "name": "city",
+                    "type": "String",
+                    "info": "State\/Country\/Region name where the city is located.",
+                    "required": true
+                },
+                {
+                    "name": "state",
+                    "type": "String",
+                    "info": " Name of city you wish to get the data from.",
+                    "required": true
+                }
+            ],
+            "vendorRequest": {
+                "url": "http:\/\/api.airvisual.com\/\/v2\/city",
+                "method": "get",
+                "requestParameters": [
+                    {
+                        "type": "query",
+                        "parameters": [
+                            "key",
+                            "state",
+                            "city",
+                            "country"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        }
+    ]
+}
