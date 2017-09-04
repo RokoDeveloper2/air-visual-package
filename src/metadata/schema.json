@@ -3,7 +3,7 @@
     "tagline": "AirVisual API",
     "description": "The world\u2019s smartest air quality monitor helping you track, foresee, and take action against invisible threats in the air.The AirVisual Advantage - 8,000 stations worldwide Air pollution is a global problem - we offer a global solution.High accuracy forecasts In-house artificial intelligence delivers forecast precision never known possible, until now.Crowd-sourced platform No-nonsense news and educational ressources provided for the community, by the community.",
     "image": "https:\/\/logo.clearbit.com\/airvisual.com",
-    "repo": "",
+    "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-AirVisual-Package",
     "keywords": [
         "API",
         "Weather",
