@@ -18,6 +18,10 @@
             "apiKey"
         ]
     },
+    "steps": [
+        "Register on the https://airvisual.com.",
+        "After registering, you will see apiKey in console https://airvisual.com/user/api."
+    ],
     "blocks": [
         {
             "name": "getNearestCity",

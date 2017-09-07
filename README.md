@@ -7,7 +7,7 @@ The world’s smartest air quality monitor helping you track, foresee, and take 
 
 ## How to get credentials: 
 1. Register on the [airvisual.com](https://airvisual.com).
-2. After register, in [console](https://airvisual.com/user/api), you will see apiKey****.
+2. After registering, you will see apiKey in [console](https://airvisual.com/user/api).
  
 ## Custom datatypes:
  |Datatype|Description|Example
