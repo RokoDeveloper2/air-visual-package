@@ -23,7 +23,7 @@ $app->post('/api/Wunderlist/getAvatar', function ($request, $response) {
 
     $fileParams = array('fileName' => 'test.png');
 
-    $result = \Models\RequestFacade::makeRequest($client,$query_str,$requestParams,false,$fileParams);
+    $result = \Models\RequestFacade::makeRequest($client,$query_str,$requestParams);
 
      return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 
